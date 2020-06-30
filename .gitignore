@@ -1,0 +1,10 @@
+**/.idea
+**/venv
+**/__pycache__
+*.log
+*/build
+**/dist
+config.py
+log_patterns.py
+UI_tlc_gui.py
+*.spec
