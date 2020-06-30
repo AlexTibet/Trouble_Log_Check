@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1060</width>
+    <height>791</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Trouble Log Check v 0.7</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow {
+	background-color: WhiteSmoke;
+}
+QListWidget {
+	background-color:White;
+	border: none;
+}
+QTextEdit {
+	background-color: WhiteSmoke;
+	border: none;
+}
+QLineEdit {
+	background-color: White;
+	border: none;
+	wight: 50px;
+	height: 30px;
+}
+QLabel {
+	wight: 50px;
+	height: 20px;
+	font-size: 11px;
+	font-weight: bold;
+	border: none;
+	text-align: center;
+}
+
+QPushButton {
+	background-color:silver;
+	wight: 75px;
+	height: 50px;
+	font-size: 13px;
+	font-weight: bold;
+	border: none;
+	text-align: center;
+	text-color:#36393F;
+}
+QPushButton:hover {
+	background-color: Lavender;
+}
+QPushButton:pressed {
+	background-color:DimGrey;
+}
+QToolButton {
+	background-color:silver;
+	text-color: White;
+	font-size: 13px;
+	font-weight: bold;
+	border: none;
+	text-align: center;
+}
+QToolButton:hover {
+	background-color:  Lavender;
+}
+QToolButton:pressed {
+	background-color: DimGrey;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_2">
+    <item>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QCheckBox" name="checkBox">
+        <property name="acceptDrops">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>Поставьте галочку чтобы скачать активный на данный момент .log файл</string>
+        </property>
+        <property name="text">
+         <string>активный.log файл</string>
+        </property>
+        <property name="checked">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QCheckBox" name="checkBox_2">
+        <property name="toolTip">
+         <string>Поставьте галочку чтобы скачать .log файл который был активен до рестарта</string>
+        </property>
+        <property name="text">
+         <string>предыдущий .log файл</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Button_with_download_log_file">
+        <property name="acceptDrops">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>Скачивает последний активный .log файл</string>
+        </property>
+        <property name="toolTipDuration">
+         <number>-1</number>
+        </property>
+        <property name="text">
+         <string>Скачать</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="text">
+         <string>Выбрать другой log. файл          </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLineEdit" name="lineEdit_for_log_file">
+          <property name="toolTip">
+           <string>Введите путь к загруженному файлу</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QToolButton" name="toolButton_forlog_file">
+          <property name="toolTip">
+           <string>Выберите скачанный файл</string>
+          </property>
+          <property name="text">
+           <string>...</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_5">
+        <property name="text">
+         <string>SteamID:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="lineEdit_SteamID">
+        <property name="toolTip">
+         <string>Введите SteamID интересующего вас игрока</string>
+        </property>
+        <property name="toolTipDuration">
+         <number>-1</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="text">
+         <string>Посмотреть по SteamID:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="Button_with_chek_SteamId">
+        <property name="toolTip">
+         <string>Нажмите чтобы просмотреть логи касающиеся определённого игрока (необходим его SteamID)</string>
+        </property>
+        <property name="text">
+         <string>OK</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_4">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>40</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="text">
+         <string>Логи по категориям:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_for_all_death">
+        <property name="toolTip">
+         <string>Нажмите чтобы посмотреть записи обо всех смертях на сервере</string>
+        </property>
+        <property name="text">
+         <string>Смерти</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_for_global_chat">
+        <property name="toolTip">
+         <string>Нажмите чтобы посмотреть всё что игроки писали в глобальный чат игры</string>
+        </property>
+        <property name="text">
+         <string>Глобал чат</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_all_chat">
+        <property name="toolTip">
+         <string>Нажмите чтобы посмотреть всё что игроки писали в личные сообщения, групповые чаты, и глобольный чат игры</string>
+        </property>
+        <property name="text">
+         <string>Все чаты</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_all_lpg">
+        <property name="toolTip">
+         <string>Нажмите чтобы посмотреть все записи касающиеся всех игроков. (подключения к серверу, отключения от сервера, чаты, консольные комманды, убийства, смерти)</string>
+        </property>
+        <property name="text">
+         <string>Посмотреть всё</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="verticalSpacer_5">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+        <property name="sizeType">
+         <enum>QSizePolicy::Fixed</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>20</width>
+          <height>10</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTextEdit" name="textEdit">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
+      </property>
+      <property name="toolTipDuration">
+       <number>0</number>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::LinksAccessibleByKeyboard|Qt::LinksAccessibleByMouse|Qt::TextBrowserInteraction|Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
