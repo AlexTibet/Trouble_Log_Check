@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 from ftplib import FTP
-from config import host, port, login, password
+from config import host, port, login, password, directory
 
 out = 'Game_log_file.log'
 out2 = 'old_Game_log_file.log'
@@ -12,7 +12,7 @@ def download_log(a: bool, b: bool) -> str:
     with FTP() as ftp:
         ftp.connect(host, port)
         ftp.login(login, password)
-        ftp.cwd('185.66.84.228_27015-Saved/Logs')
+        ftp.cwd(directory)
         dir = ftp.nlst()
         if a is True:
             with open(out, 'wb') as f:
